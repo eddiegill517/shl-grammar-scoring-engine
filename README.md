@@ -48,6 +48,42 @@ Audio (.wav) → Whisper Transcription → Multi-Modal Feature Extraction → En
 
 **Optimization:** Nelder-Mead algorithm minimizing OOF RMSE with 5-Fold CV
 
+---
+
+## 📈 Results
+
+### Model Performance (Out-of-Fold Cross-Validation)
+
+| Metric | Score |
+|--------|-------|
+| **RMSE** | 0.5403 |
+| **Pearson Correlation** | 0.7114 |
+| **Spearman Correlation** | 0.6026 |
+
+### Individual Model Performance
+
+| Model | RMSE | Pearson r |
+|-------|------|-----------|
+| SVR | 0.5524 | 0.6947 |
+| Bayesian Ridge | 0.5531 | 0.6919 |
+| XGBoost v2 | 0.5596 | 0.6840 |
+| XGBoost v1 | 0.5624 | 0.6790 |
+| LightGBM v1 | 0.5660 | 0.6738 |
+| **Ensemble** | **0.5403** | **0.7114** |
+
+### Optimized Ensemble Weights
+
+| Model | Weight |
+|-------|--------|
+| Bayesian Ridge | 30.5% |
+| KNN | 15.4% |
+| LightGBM v1 | 14.3% |
+| SVR | 13.1% |
+| XGBoost v1 | 11.2% |
+| Ridge | 10.9% |
+| XGBoost v2 | 4.6% |
+
+---
 
 ## 🔬 Key Technical Details
 
@@ -101,12 +137,12 @@ matplotlib, scipy, tqdm
 | `README.md`                     | Project documentation |
 
 
-📚 References
+## 📚 References
 
-Radford et al. (2022) - Whisper: Robust Speech Recognition
-Warstadt et al. (2019) - CoLA: Corpus of Linguistic Acceptability
-He et al. (2021) - DeBERTa: Decoding-enhanced BERT
-Chen & Guestrin (2016) - XGBoost
+- Radford et al. (2022) - *Whisper: Robust Speech Recognition*
+- Warstadt et al. (2019) - *CoLA: Corpus of Linguistic Acceptability*
+- He et al. (2021) - *DeBERTa: Decoding-enhanced BERT*
+- Chen & Guestrin (2016) - *XGBoost*
 
-Built for SHL AI Team | Intern Hiring Assessment 2025
+## Built for SHL AI Team | Intern Hiring Assessment 2025
 ⭐ Star this repo if you found it interesting!
